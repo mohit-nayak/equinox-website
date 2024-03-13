@@ -1,0 +1,818 @@
+@import 'variables';
+@import 'utils';
+@import 'reset';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-BlackItalic.eot');
+  src: local('Roboto Black Italic'), local('Roboto-BlackItalic'),
+  url('../fonts/Roboto/Roboto-BlackItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-BlackItalic.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-BlackItalic.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-Bold.eot');
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+  url('../fonts/Roboto/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-Bold.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-Bold.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-BoldItalic.eot');
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'),
+  url('../fonts/Roboto/Roboto-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-BoldItalic.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-BoldItalic.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-LightItalic.eot');
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'),
+  url('../fonts/Roboto/Roboto-LightItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-LightItalic.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-LightItalic.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-Regular.eot');
+  src: local('Roboto'), local('Roboto-Regular'),
+  url('../fonts/Roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-Regular.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-Regular.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-ThinItalic.eot');
+  src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'),
+  url('../fonts/Roboto/Roboto-ThinItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-ThinItalic.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-ThinItalic.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-Black.eot');
+  src: local('Roboto Black'), local('Roboto-Black'),
+  url('../fonts/Roboto/Roboto-Black.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-Black.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-Black.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-MediumItalic.eot');
+  src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'),
+  url('../fonts/Roboto/Roboto-MediumItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-MediumItalic.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-MediumItalic.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-Thin.eot');
+  src: local('Roboto Thin'), local('Roboto-Thin'),
+  url('../fonts/Roboto/Roboto-Thin.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-Thin.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-Thin.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-Light.eot');
+  src: local('Roboto Light'), local('Roboto-Light'),
+  url('../fonts/Roboto/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-Light.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-Light.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-Italic.eot');
+  src: local('Roboto Italic'), local('Roboto-Italic'),
+  url('../fonts/Roboto/Roboto-Italic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-Italic.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-Italic.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-Medium.eot');
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+  url('../fonts/Roboto/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto/Roboto-Medium.woff2') format('woff2'),
+  url('../fonts/Roboto/Roboto-Medium.woff') format('woff'),
+  url('../fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/Futura/FuturaPT-Bold.eot');
+  src: local('Futura PT Bold'), local('FuturaPT-Bold'),
+  url('../fonts/Futura/FuturaPT-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-Bold.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-Bold.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/Futura/FuturaPT-Heavy.eot');
+  src: local('Futura PT Heavy'), local('FuturaPT-Heavy'),
+  url('../fonts/Futura/FuturaPT-Heavy.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-Heavy.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-Heavy.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT Demi';
+  src: url('../fonts/Futura/FuturaPT-DemiObl.eot');
+  src: local('Futura PT Demi Oblique'), local('FuturaPT-DemiObl'),
+  url('../fonts/Futura/FuturaPT-DemiObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-DemiObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-DemiObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-DemiObl.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT Cond Extra';
+  src: url('../fonts/Futura/FuturaPTCond-ExtraBoldObl.eot');
+  src: local('Futura PT Cond Extra Bold Oblique'), local('FuturaPTCond-ExtraBoldObl'),
+  url('../fonts/Futura/FuturaPTCond-ExtraBoldObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPTCond-ExtraBoldObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPTCond-ExtraBoldObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPTCond-ExtraBoldObl.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT Cond Book';
+  src: url('../fonts/Futura/FuturaPTCond-Book.eot');
+  src: local('Futura PT Cond Book'), local('FuturaPTCond-Book'),
+  url('../fonts/Futura/FuturaPTCond-Book.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPTCond-Book.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPTCond-Book.woff') format('woff'),
+  url('../fonts/Futura/FuturaPTCond-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/Futura/FuturaPT-LightObl.eot');
+  src: local('Futura PT Light Oblique'), local('FuturaPT-LightObl'),
+  url('../fonts/Futura/FuturaPT-LightObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-LightObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-LightObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-LightObl.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT Book';
+  src: url('../fonts/Futura/FuturaPT-BookObl.eot');
+  src: local('Futura PT Book Oblique'), local('FuturaPT-BookObl'),
+  url('../fonts/Futura/FuturaPT-BookObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-BookObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-BookObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-BookObl.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/Futura/FuturaPT-HeavyObl.eot');
+  src: local('Futura PT Heavy Oblique'), local('FuturaPT-HeavyObl'),
+  url('../fonts/Futura/FuturaPT-HeavyObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-HeavyObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-HeavyObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-HeavyObl.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT Cond';
+  src: url('../fonts/Futura/FuturaPTCond-BoldObl.eot');
+  src: local('Futura PT Cond Bold Oblique'), local('FuturaPTCond-BoldObl'),
+  url('../fonts/Futura/FuturaPTCond-BoldObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPTCond-BoldObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPTCond-BoldObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPTCond-BoldObl.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT Demi';
+  src: url('../fonts/Futura/FuturaPT-Demi.eot');
+  src: local('Futura PT Demi'), local('FuturaPT-Demi'),
+  url('../fonts/Futura/FuturaPT-Demi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-Demi.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-Demi.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-Demi.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT Cond Book';
+  src: url('../fonts/Futura/FuturaPTCond-BookObl.eot');
+  src: local('Futura PT Cond Book Oblique'), local('FuturaPTCond-BookObl'),
+  url('../fonts/Futura/FuturaPTCond-BookObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPTCond-BookObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPTCond-BookObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPTCond-BookObl.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT Extra';
+  src: url('../fonts/Futura/FuturaPT-ExtraBold.eot');
+  src: local('Futura PT Extra Bold'), local('FuturaPT-ExtraBold'),
+  url('../fonts/Futura/FuturaPT-ExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-ExtraBold.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-ExtraBold.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT Cond';
+  src: url('../fonts/Futura/FuturaPTCond-Medium.eot');
+  src: local('Futura PT Cond Medium'), local('FuturaPTCond-Medium'),
+  url('../fonts/Futura/FuturaPTCond-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPTCond-Medium.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPTCond-Medium.woff') format('woff'),
+  url('../fonts/Futura/FuturaPTCond-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/Futura/FuturaPT-Medium.eot');
+  src: local('Futura PT Medium'), local('FuturaPT-Medium'),
+  url('../fonts/Futura/FuturaPT-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-Medium.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-Medium.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT Cond Extra';
+  src: url('../fonts/Futura/FuturaPTCond-ExtraBold.eot');
+  src: local('Futura PT Cond Extra Bold'), local('FuturaPTCond-ExtraBold'),
+  url('../fonts/Futura/FuturaPTCond-ExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPTCond-ExtraBold.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPTCond-ExtraBold.woff') format('woff'),
+  url('../fonts/Futura/FuturaPTCond-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/Futura/FuturaPT-MediumObl.eot');
+  src: local('Futura PT Medium Oblique'), local('FuturaPT-MediumObl'),
+  url('../fonts/Futura/FuturaPT-MediumObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-MediumObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-MediumObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-MediumObl.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT Cond';
+  src: url('../fonts/Futura/FuturaPTCond-Bold.eot');
+  src: local('Futura PT Cond Bold'), local('FuturaPTCond-Bold'),
+  url('../fonts/Futura/FuturaPTCond-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPTCond-Bold.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPTCond-Bold.woff') format('woff'),
+  url('../fonts/Futura/FuturaPTCond-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/Futura/FuturaPT-BoldObl.eot');
+  src: local('Futura PT Bold Oblique'), local('FuturaPT-BoldObl'),
+  url('../fonts/Futura/FuturaPT-BoldObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-BoldObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-BoldObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-BoldObl.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT Book';
+  src: url('../fonts/Futura/FuturaPT-Book.eot');
+  src: local('Futura PT Book'), local('FuturaPT-Book'),
+  url('../fonts/Futura/FuturaPT-Book.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-Book.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-Book.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/Futura/FuturaPT-Light.eot');
+  src: local('Futura PT Light'), local('FuturaPT-Light'),
+  url('../fonts/Futura/FuturaPT-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-Light.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-Light.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT Cond';
+  src: url('../fonts/Futura/FuturaPTCond-MediumObl.eot');
+  src: local('Futura PT Cond Medium Oblique'), local('FuturaPTCond-MediumObl'),
+  url('../fonts/Futura/FuturaPTCond-MediumObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPTCond-MediumObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPTCond-MediumObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPTCond-MediumObl.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Futura PT Extra';
+  src: url('../fonts/Futura/FuturaPT-ExtraBoldObl.eot');
+  src: local('Futura PT Extra Bold Oblique'), local('FuturaPT-ExtraBoldObl'),
+  url('../fonts/Futura/FuturaPT-ExtraBoldObl.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Futura/FuturaPT-ExtraBoldObl.woff2') format('woff2'),
+  url('../fonts/Futura/FuturaPT-ExtraBoldObl.woff') format('woff'),
+  url('../fonts/Futura/FuturaPT-ExtraBoldObl.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Albra Text';
+  src: url('../fonts/Albra/AlbraText-Black.eot');
+  src: local('Albra Text Black'), local('AlbraText-Black'),
+  url('../fonts/Albra/AlbraText-Black.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/AlbraText-Black.woff2') format('woff2'),
+  url('../fonts/Albra/AlbraText-Black.woff') format('woff'),
+  url('../fonts/Albra/AlbraText-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra Text';
+  src: url('../fonts/Albra/AlbraText-Light.eot');
+  src: local('Albra Text Light'), local('AlbraText-Light'),
+  url('../fonts/Albra/AlbraText-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/AlbraText-Light.woff2') format('woff2'),
+  url('../fonts/Albra/AlbraText-Light.woff') format('woff'),
+  url('../fonts/Albra/AlbraText-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra Text';
+  src: url('../fonts/Albra/AlbraText-Medium.eot');
+  src: local('Albra Text Medium'), local('AlbraText-Medium'),
+  url('../fonts/Albra/AlbraText-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/AlbraText-Medium.woff2') format('woff2'),
+  url('../fonts/Albra/AlbraText-Medium.woff') format('woff'),
+  url('../fonts/Albra/AlbraText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('../fonts/Albra/Albra-Semi.eot');
+  src: local('Albra Semi'), local('Albra-Semi'),
+  url('../fonts/Albra/Albra-Semi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/Albra-Semi.woff2') format('woff2'),
+  url('../fonts/Albra/Albra-Semi.woff') format('woff'),
+  url('../fonts/Albra/Albra-Semi.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra Text';
+  src: url('../fonts/Albra/AlbraText-Bold.eot');
+  src: local('Albra Text Bold'), local('AlbraText-Bold'),
+  url('../fonts/Albra/AlbraText-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/AlbraText-Bold.woff2') format('woff2'),
+  url('../fonts/Albra/AlbraText-Bold.woff') format('woff'),
+  url('../fonts/Albra/AlbraText-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('../fonts/Albra/Albra-Medium.eot');
+  src: local('Albra Medium'), local('Albra-Medium'),
+  url('../fonts/Albra/Albra-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/Albra-Medium.woff2') format('woff2'),
+  url('../fonts/Albra/Albra-Medium.woff') format('woff'),
+  url('../fonts/Albra/Albra-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('../fonts/Albra/Albra-Regular.eot');
+  src: local('Albra Regular'), local('Albra-Regular'),
+  url('../fonts/Albra/Albra-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/Albra-Regular.woff2') format('woff2'),
+  url('../fonts/Albra/Albra-Regular.woff') format('woff'),
+  url('../fonts/Albra/Albra-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra Text';
+  src: url('../fonts/Albra/AlbraText-Regular.eot');
+  src: local('Albra Text Regular'), local('AlbraText-Regular'),
+  url('../fonts/Albra/AlbraText-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/AlbraText-Regular.woff2') format('woff2'),
+  url('../fonts/Albra/AlbraText-Regular.woff') format('woff'),
+  url('../fonts/Albra/AlbraText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('../fonts/Albra/Albra-Bold.eot');
+  src: local('Albra Bold'), local('Albra-Bold'),
+  url('../fonts/Albra/Albra-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/Albra-Bold.woff2') format('woff2'),
+  url('../fonts/Albra/Albra-Bold.woff') format('woff'),
+  url('../fonts/Albra/Albra-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('../fonts/Albra/Albra-Light.eot');
+  src: local('Albra Light'), local('Albra-Light'),
+  url('../fonts/Albra/Albra-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/Albra-Light.woff2') format('woff2'),
+  url('../fonts/Albra/Albra-Light.woff') format('woff'),
+  url('../fonts/Albra/Albra-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('../fonts/Albra/Albra-Black.eot');
+  src: local('Albra Black'), local('Albra-Black'),
+  url('../fonts/Albra/Albra-Black.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/Albra-Black.woff2') format('woff2'),
+  url('../fonts/Albra/Albra-Black.woff') format('woff'),
+  url('../fonts/Albra/Albra-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Albra Text Semi';
+  src: url('../fonts/Albra/AlbraText-Semi.eot');
+  src: local('Albra Text Semi'), local('AlbraText-Semi'),
+  url('../fonts/Albra/AlbraText-Semi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Albra/AlbraText-Semi.woff2') format('woff2'),
+  url('../fonts/Albra/AlbraText-Semi.woff') format('woff'),
+  url('../fonts/Albra/AlbraText-Semi.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+html  {
+  scroll-behavior: smooth;
+  font-size: calcBaseVW($baseFont, $baseWidth);
+
+  &.lenis {
+    height: auto;
+  }
+
+  &.lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  &.lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  &.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  @media (max-width: $baseTabWidth + 'px') {
+    font-size: calcBaseVW($baseTabFont, $baseWidth);
+  }
+
+/*
+  @media (max-width: $baseTabWidth + 'px') {
+    font-size: calcBaseVW($baseTabFont, $baseTabWidth);
+  }
+
+  @media (max-width: $baseMobileWidth + 'px') {
+    font-size: calcBaseVW($baseMobileFont, $baseMobileWidth);
+  }*/
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  min-height: 100%;
+  color: $textColor;
+  background-color: $bgColor;
+}
+
+::selection {
+  background-color: $textColor;
+  color: $bgColor;
+}
+
+.container {
+  padding: 0 pxToRem(40);
+
+  @media (max-width: $baseTabWidth + 'px') {
+    padding: 0 pxToRemTab(20) 0 pxToRemTab(20);
+  }
+}
+
+.futura-bold-29 {
+  font-family: 'Futura PT', sans-serif;
+  font-size: pxToRem(29);
+  line-height: pxToRem(39);
+  font-weight: bold;
+
+  @media (max-width: $baseMobileWidth + 'px') {
+    font-size: pxToRem(42);
+    line-height: pxToRem(56);
+  }
+}
+
+.futura-bold-42 {
+  font-family: 'Futura PT', sans-serif;
+  font-size: pxToRem(42);
+  line-height: pxToRem(56);
+  font-weight: bold;
+}
+
+.futura-bold-49 {
+  font-family: 'Futura PT', sans-serif;
+  font-size: pxToRem(49);
+  line-height: pxToRem(52);
+  font-weight: bold;
+}
+
+.albra-bold-109 {
+  font-family: 'Albra', serif;
+  font-size: pxToRem(109);
+  line-height: pxToRem(120);
+  font-weight: bold;
+}
+
+.albra-semi-109 {
+  font-family: 'Albra', serif;
+  font-size: pxToRem(109);
+  line-height: pxToRem(120);
+  font-weight: 600;
+}
+
+.albra-semi-200 {
+  font-family: 'Albra', serif;
+  font-size: pxToRem(200);
+  line-height: pxToRem(175);
+  font-weight: 600;
+}
+
+.albra-semi-61 {
+  font-family: 'Albra', serif;
+  font-size: pxToRem(61);
+  line-height: pxToRem(65);
+  font-weight: 600;
+}
+
+.albra-bold-49 {
+  font-family: 'Albra', serif;
+  font-size: pxToRem(49);
+  line-height: pxToRem(52);
+  font-weight: bold;
+
+  @media (max-width: $baseMobileWidth + 'px') {
+    font-size: pxToRem(61);
+    line-height: pxToRem(65);
+  }
+}
+
+.albra-semi-49 {
+  font-family: 'Albra', serif;
+  font-size: pxToRem(49);
+  line-height: pxToRem(52);
+  font-weight: 600;
+
+  @media (max-width: $baseMobileWidth + 'px') {
+    font-size: pxToRem(61);
+    line-height: pxToRem(65);
+  }
+}
+
+.roboto-bold-49 {
+  font-family: 'Roboto', sans-serif;
+  font-size: pxToRem(49);
+  line-height: pxToRem(64);
+  font-weight: bold;
+}
+
+.roboto-bold-29 {
+  font-family: 'Roboto', sans-serif;
+  font-size: pxToRem(29);
+  line-height: pxToRem(38);
+  font-weight: bold;
+}
+
+.roboto-regular-49 {
+  font-family: 'Roboto', sans-serif;
+  font-size: pxToRem(49);
+  line-height: pxToRem(60);
+  font-weight: normal;
+}
+
+.roboto-regular-29 {
+  font-family: 'Roboto', sans-serif;
+  font-size: pxToRem(29);
+  line-height: pxToRem(38);
+  font-weight: normal;
+}
+
+p {
+  line-height: pxToRem(26);
+
+  @media (max-width: $baseMobileWidth + 'px') {
+    font-size: pxToRem(32);
+    line-height: pxToRem(43);
+  }
+}
+
+.floating-link {
+  display: inline-block;
+  color: $textColor;
+  overflow: hidden;
+
+  h4 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: pxToRem(5);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background: $textColor;
+      transform: translate3d(-100%, 0, 0);
+      will-change: transform;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background: $textColor;
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
+    }
+
+    &.futura-bold-49 {
+      &::before, &::after {
+        height: 2px;
+      }
+    }
+  }
+
+  &:hover {
+
+    h4 {
+
+      &::before {
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.8s cubic-bezier(.61,.04,.45,.96);
+        transition-delay: 0.2s;
+      }
+
+      &::after {
+        transform: translate3d(100%, 0, 0);
+        transition: transform 0.8s cubic-bezier(.61,.04,.45,.96);
+      }
+    }
+  }
+}
+
+.image-skeleton-loading {
+  background-color: #efefef;
+}
+
+@keyframes fade-in-out {
+  0%{
+    opacity: 0.3;
+
+  }
+  50% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.3;
+  }
+}
+
+
+/*
+img {
+  filter: grayscale(1);
+
+  &:hover {
+    filter: grayscale(0);
+    transition: filter 0.3s ease;
+  }
+}
+*/

@@ -1,0 +1,182 @@
+@use '../../utils';
+@use '../../variables';
+@use 'sass:math';
+
+.gallery-modal {
+  position: fixed;
+  //top: utils.pxToRem(96);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  //height: calc(100% - #{utils.pxToRem(96)});
+  height: 100%;
+  z-index: 99999;
+  background-color: variables.$bgColor;
+  border-top: 1px solid variables.$textColor;
+  transform: translate3d(0, 100%, 0);
+  will-change: transform;
+  visibility: visible;
+  opacity: 1;
+  transition: transform 0.8s cubic-bezier(.61,.04,.45,.96), visibility 0.1s linear 0.8s, opacity 0.1s linear 0.8s;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(0 ,0, 0);
+    transition: transform 0.8s cubic-bezier(.61,.04,.45,.96);
+  }
+
+  @media (max-width: variables.$baseMobileWidth + 'px') {
+    top: 0;
+    height: 100%;
+  }
+
+  .container {
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .scroll-info {
+    position: absolute;
+    padding: utils.pxToRem(40);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    text-transform: capitalize;
+    pointer-events: none;
+
+    @media (max-width: variables.$baseMobileWidth + 'px') {
+      padding: utils.pxToRem(50);
+    }
+  }
+
+  .carousel-wrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 64vh utils.pxToRem(80);
+    gap: utils.pxToRem(78);
+
+    @media (max-width: variables.$baseMobileWidth + 'px') {
+      grid-template-rows: 44vh utils.pxToRem(150);
+    }
+
+    .main-image-wrapper {
+      width: 65vw;
+      height: 64vh;
+      margin: 0 auto;
+
+      @media (max-width: variables.$baseMobileWidth + 'px') {
+        width: 95vw;
+        height: 44vh;
+      }
+
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .thumbs-outer-wrapper {
+      width: utils.pxToRem(962);
+      overflow: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      padding-bottom: utils.pxToRem(20);
+      margin: 0 auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @media (max-width: variables.$baseMobileWidth + 'px') {
+        padding-bottom: utils.pxToRem(30);
+      }
+
+
+      .thumbs-wrapper {
+        display: grid;
+        grid-auto-flow: column;
+        gap: utils.pxToRem(12);
+
+        .thumb-item {
+          min-width: max-content;
+          height: 100%;
+          position: relative;
+          cursor: pointer;
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: variables.$textColor;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            bottom: utils.pxToRem(-15);
+            left: 50%;
+            transform: translate3d(-50%, 5rem, 0);
+            will-change: transform;
+            transition: transform 0.3s cubic-bezier(.61,.04,.45,.96);
+
+            @media (max-width: variables.$baseMobileWidth + 'px') {
+              width: 3px;
+              height: 3px;
+              bottom: utils.pxToRem(-20);
+            }
+          }
+
+          &.active::after {
+            transform: translate3d(-50%, 0, 0);
+            transition: transform 0.3s cubic-bezier(.61,.04,.45,.96);
+          }
+
+          img {
+            object-fit: cover;
+            height: utils.pxToRem(60);
+            width: utils.pxToRem(60);
+
+            @media (max-width: variables.$baseMobileWidth + 'px') {
+              height: utils.pxToRem(120);
+              width: utils.pxToRem(120);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: utils.pxToRem(30);
+    z-index: 99999;
+    cursor: pointer;
+    display: inline-block;
+    transform: rotate3d(0, 0, 0, 0);
+    will-change: transform;
+
+    svg {
+      width: utils.pxToRem(33);
+      height: utils.pxToRem(33);
+
+      @media (max-width: variables.$baseMobileWidth + 'px') {
+        width: utils.pxToRem(50);
+        height: utils.pxToRem(50);
+      }
+    }
+
+    &:hover {
+      transform: rotate3d(0, 0, 1, 90deg);
+      transition: transform 0.5s cubic-bezier(.61,.04,.45,.96);
+    }
+  }
+}

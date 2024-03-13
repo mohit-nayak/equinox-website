@@ -1,0 +1,149 @@
+@use '../utils';
+@use '../variables';
+
+
+.contact-page {
+
+  .banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    @media (max-width: variables.$baseMobileWidth + 'px') {
+      height: 40vh;
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      object-fit: cover;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    .heading-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+    }
+
+    h1 {
+      position: absolute;
+      bottom: utils.pxToRem(21);
+      left: 0;
+      right: 0;
+      color: variables.$bgColor;
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: space-between;
+      text-transform: uppercase;
+    }
+  }
+
+  .block-1 {
+    padding: utils.pxToRem(188) 0 utils.pxToRem(206);
+
+    .heading-wrapper {
+      margin-bottom: utils.pxToRem(358);
+
+      h2 {
+        text-transform: capitalize;
+        text-align: center;
+
+        &:first-child {
+          margin-bottom: utils.pxToRem(28);
+        }
+      }
+    }
+
+    .img-wrapper {
+      width: utils.pxToRem(289);
+      margin: 0 auto utils.pxToRem(175);
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: utils.pxToRem(-58);
+        transform: translateX(-50%);
+        height: utils.pxToRem(536);
+        width: 1px;
+        background-color: variables.$textColor;
+        z-index: -1;
+      }
+    }
+
+    .info-wrapper {
+      margin-bottom: utils.pxToRem(146);
+
+      h4 {
+        text-align: center;
+
+        a {
+          color: variables.$textColor;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: utils.pxToRem(-5);
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: utils.pxToRem(1);
+            background: variables.$textColor;
+            transform: scaleX(0);
+          }
+
+          &:hover {
+
+            &::after {
+              transform: scaleX(1);
+              transition: transform 0.5s cubic-bezier(.61,.04,.45,.96);
+              transform-origin: left;
+            }
+          }
+        }
+
+        @media (max-width: variables.$baseMobileWidth + 'px') {
+          font-size: utils.pxToRem(49);
+          line-height: utils.pxToRem(52);
+        }
+
+        &:first-child {
+          margin-bottom: utils.pxToRem(22);
+        }
+      }
+    }
+
+    .link-wrapper {
+      text-align: center;
+
+      span {
+        display: block;
+        margin-bottom: utils.pxToRem(143);
+      }
+
+      img {
+        width: utils.pxToRem(268);
+        margin: 0 auto utils.pxToRem(20);
+      }
+
+      a {
+        display: inline-block;
+      }
+    }
+  }
+
+
+}

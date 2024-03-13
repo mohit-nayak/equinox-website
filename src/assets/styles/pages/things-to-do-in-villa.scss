@@ -1,0 +1,289 @@
+@use '../utils';
+@use '../variables';
+
+
+.things-to-do-page {
+
+  .banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    @media (max-width: variables.$baseMobileWidth + 'px') {
+      height: 40vh;
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      object-fit: cover;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    .heading-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+    }
+
+    h1 {
+      position: absolute;
+      bottom: utils.pxToRem(21);
+      left: 0;
+      right: 0;
+      color: variables.$bgColor;
+      text-transform: uppercase;
+
+      br {
+        @media (max-width: variables.$baseTabWidth + 'px') {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .block-1 {
+    padding: utils.pxToRem(173) 0 0;
+
+    h2 {
+      width: utils.pxToRem(1500);
+      text-transform: capitalize;
+      margin-bottom: utils.pxToRem(196);
+
+      @media (max-width: variables.$baseTabWidth + 'px') {
+        width: 100%;
+      }
+    }
+
+    h4.futura-bold-42 {
+      width: utils.pxToRem(835);
+      margin: 0 0 utils.pxToRem(84) auto;
+    }
+
+    .img-wrapper-1 {
+      width: utils.pxToRem(1157);
+      margin-bottom: utils.pxToRem(125);
+
+      @media (max-width: variables.$baseTabWidth + 'px') {
+        width: utils.pxToRemTab(1157);
+      }
+    }
+
+    .grid-wrapper {
+      display: grid;
+      grid-template-columns: utils.pxToRem(444) auto;
+      gap: utils.pxToRem(177);
+      padding-bottom: utils.pxToRem(415);
+      position: relative;
+      align-items: start;
+
+      @media (max-width: variables.$baseTabWidth + 'px') {
+        grid-template-columns: utils.pxToRemTab(544) auto;
+        gap: utils.pxToRemTab(77);
+        padding-bottom: utils.pxToRemTab(415);
+      }
+
+      .img-wrapper-2 {
+        margin-top: utils.pxToRem(468);
+      }
+
+      .content-wrapper-1, .content-wrapper-2 {
+        width: utils.pxToRem(600);
+
+        @media (max-width: variables.$baseMobileWidth + 'px') {
+          width: utils.pxToRem(680);
+        }
+
+      }
+
+      .content-wrapper-1 {
+        margin: 0 utils.pxToRem(135) utils.pxToRem(212) auto;
+
+        @media (max-width: variables.$baseTabWidth + 'px') {
+          margin-right: utils.pxToRemTab(135);
+        }
+
+        .img-wrapper-3 {
+          margin-bottom: utils.pxToRem(36);
+        }
+
+      }
+
+      .content-wrapper-2 {
+
+        p {
+          margin-bottom: utils.pxToRem(30);
+        }
+      }
+
+      .grid-floating-link {
+        position: absolute;
+        bottom: utils.pxToRem(203);
+        right: utils.pxToRem(130);
+        display: inline-block;
+        color: variables.$textColor;
+
+        @media (max-width: variables.$baseTabWidth + 'px') {
+          bottom: utils.pxToRemTab(203);
+          right: utils.pxToRemTab(130);
+        }
+
+        @media (max-width: variables.$baseMobileWidth + 'px') {
+          right: unset;
+          left: utils.pxToRemTab(130);
+          bottom: utils.pxToRemTab(300);
+        }
+
+        svg {
+          width: utils.pxToRem(213);
+          height: utils.pxToRem(213);
+
+          @media (max-width: variables.$baseTabWidth + 'px') {
+            width: utils.pxToRemTab(213);
+            height: utils.pxToRemTab(213);
+          }
+
+          @media (max-width: variables.$baseMobileWidth + 'px') {
+            width: utils.pxToRemTab(313);
+            height: utils.pxToRemTab(313);
+          }
+        }
+
+        h4 {
+          position: absolute;
+          margin-bottom: utils.pxToRem(11);
+          display: inline-block;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding-bottom: utils.pxToRem(5);
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 1px;
+            background: variables.$textColor;
+          }
+        }
+      }
+
+    }
+  }
+
+  .block-2 {
+    padding: utils.pxToRem(222) 0 utils.pxToRem(230);
+
+    .heading-1 {
+      width: utils.pxToRem(1220);
+      text-align: center;
+      margin: 0 auto utils.pxToRem(204);
+
+      @media (max-width: variables.$baseTabWidth + 'px') {
+        width: 100%;
+      }
+    }
+
+    .img-wrapper-6 {
+      width: utils.pxToRem(1063);
+      margin: 0 0 0 auto;
+
+      @media (max-width: variables.$baseTabWidth + 'px') {
+        width: utils.pxToRemTab(1063);
+      }
+    }
+
+    .img-wrapper-7 {
+      width: utils.pxToRem(910);
+      margin: utils.pxToRem(-173) auto 0 utils.pxToRem(156);
+
+      @media (max-width: variables.$baseTabWidth + 'px') {
+        width: utils.pxToRemTab(910);
+        margin: utils.pxToRemTab(-173) auto 0 utils.pxToRemTab(156);
+      }
+    }
+
+    .heading-2 {
+      width: utils.pxToRem(1375);
+      margin: utils.pxToRem(-55) 0 utils.pxToRem(40) auto;
+
+      @media (max-width: variables.$baseTabWidth + 'px') {
+        width: utils.pxToRemTab(1375);
+        margin: utils.pxToRemTab(-70) 0 utils.pxToRem(40) auto;
+      }
+
+      &:first-letter {
+        padding-left: utils.pxToRem(620);
+
+        @media (max-width: variables.$baseTabWidth + 'px') {
+          padding-left: utils.pxToRemTab(600);
+        }
+      }
+    }
+
+    .img-wrapper-8 {
+      width: utils.pxToRem(445);
+      margin: 0 0 0 auto;
+    }
+  }
+
+  .block-3 {
+
+    h2 {
+      width: utils.pxToRem(1200);
+      margin-bottom: utils.pxToRem(40);
+    }
+
+    .overlay-block {
+      background-color: #882909;
+      color: variables.$bgColor;
+      padding: utils.pxToRem(65) utils.pxToRem(54) utils.pxToRem(88);
+      margin: utils.pxToRem(-420) auto utils.pxToRem(214);
+      width: utils.pxToRem(910);
+      position: relative;
+
+      @media (max-width: variables.$baseTabWidth + 'px') {
+        margin-top: utils.pxToRemTab(-320);
+      }
+
+      p {
+        margin-bottom: utils.pxToRem(454);
+
+        @media (max-width: variables.$baseTabWidth + 'px') {
+          margin-bottom: utils.pxToRemTab(454);
+        }
+      }
+
+      .floating-link {
+        color: variables.$bgColor;
+
+        h4::before, h4::after {
+          background-color: variables.$bgColor;
+        }
+      }
+    }
+
+    .link-wrapper {
+      text-align: center;
+      margin-bottom: utils.pxToRem(206);
+
+      .floating-link {
+        display: inline-block;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
